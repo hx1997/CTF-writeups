@@ -83,7 +83,7 @@ UPX1:0041F191                 pop     esi
 UPX1:0041F192                 retn    0Ch
 ```
 
-### 0x3. 程序主体分析
+### 0x2. 程序主体分析
 
 运行程序观察行为，提示输入 flag，随便输入一串，程序退出了。在 IDA 里找字符串 `input flag:`，可以迅速定位到函数 `sub_411BD0`，按 F5 看伪代码：
 
@@ -266,7 +266,7 @@ flag\{ThisisthreadofwindowshahaIsESZ\}
 $$
 ![flag](http://wx1.sinaimg.cn/large/6b1e58d5gy1ftk7rr9c3wj20qh0htdg5.jpg)
 
-### 0x4. 参考资料
+### 0x3. 参考资料
 
 [^1]: D. Yurichev, “缓冲区溢出的保护方法,” in *《逆向工程权威指南》*, Archer and 安天安全研究与应急处理中心, Trans. 北京：人民邮电出版社, 2017, pp. 236.
 [^2]: [https://en.wikipedia.org/wiki/Win32_Thread_Information_Block](https://en.wikipedia.org/wiki/Win32_Thread_Information_Block)
