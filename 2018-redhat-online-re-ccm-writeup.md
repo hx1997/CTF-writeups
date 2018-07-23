@@ -11,11 +11,13 @@ tags:
 
 这次红帽杯除送分题外唯一做出的题就是一道逆向（还有一道 Pwn 差了一点，比赛结束后才做出来），我好菜啊。不过组队打 CTF 还是开心，嘻嘻。
 
+比赛文件下载：[RE - CCM](https://github.com/hx1997/CTF-writeups/blob/master/2018-redhat-online-re-ccm-writeup/CCM.exe?raw=true)、[Pwn2](https://github.com/hx1997/CTF-writeups/blob/master/2018-redhat-online-re-ccm-writeup/pwn2?raw=true)
+
 ### 0x1. RE - CCM
 
 拿到 exe，扔进 PEiD 看看。
 
-![](http://wx2.sinaimg.cn/large/6b1e58d5gy1fr1rnm3p3bj20ei089gmh.jpg)
+![](//wx2.sinaimg.cn/large/6b1e58d5gy1fr1rnm3p3bj20ei089gmh.jpg)
 
 加了 nSPack 壳，先找个工具脱壳。脱壳后的文件拖进 IDA，按 F5 看伪代码。
 
@@ -53,7 +55,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 进入 `sub_401380` 分析。
 
-![](http://wx3.sinaimg.cn/large/6b1e58d5gy1fr1uhawb0nj20n614wt9j.jpg)
+![](//wx3.sinaimg.cn/large/6b1e58d5gy1fr1uhawb0nj20n614wt9j.jpg)
 
 看不全的两行后面再说。
 
@@ -214,7 +216,7 @@ LABEL_22:
 
 这个函数的作用是生成两张维吉尼亚密码表，一张小写，一张大写，长这样（要用到的是小写的）：
 
-![](http://wx4.sinaimg.cn/mw690/6b1e58d5gy1fr1w8qokr2j20p00p0grz.jpg)
+![](//wx4.sinaimg.cn/mw690/6b1e58d5gy1fr1w8qokr2j20p00p0grz.jpg)
 
 小写密码表会存到传入的局部数组 `subst_table_low`，以备后面加密替换。
 
@@ -303,7 +305,7 @@ LABEL_15:
 $$
 flag\{54f946f5-f95a-4a0a-ba31-7b171a7eca82\}
 $$
-![](http://wx3.sinaimg.cn/large/6b1e58d5gy1fr1yn8s2qtj20d306l74g.jpg)
+![](//wx3.sinaimg.cn/large/6b1e58d5gy1fr1yn8s2qtj20d306l74g.jpg)
 
 ### 0x2. Pwn - game server
 
@@ -411,5 +413,5 @@ flag\{f3b92d795c9ee0725c160680acd084d9\}
 $$
 
 
-![](http://wx3.sinaimg.cn/mw690/6b1e58d5gy1fs3393pkfbj20u012345g.jpg)
+![](//wx3.sinaimg.cn/mw690/6b1e58d5gy1fs3393pkfbj20u012345g.jpg)
 
