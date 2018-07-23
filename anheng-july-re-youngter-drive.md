@@ -21,7 +21,7 @@ tags:
 
 反调试的表现是，用 OD 载入程序，还**没进入主函数的逻辑**，就打印出 `///////\nWARNING\n///////\n`，立马退出了。把脱壳文件拖进 IDA，按 Shift+F12 查看字符串，果然有这串：
 
-![IDA 查看警告字符串](http://wx3.sinaimg.cn/large/6b1e58d5gy1ftisfe69e9j20gh04zt8y.jpg)
+![IDA 查看警告字符串](//wx3.sinaimg.cn/large/6b1e58d5gy1ftisfe69e9j20gh04zt8y.jpg)
 
 双击，然后按 Ctrl+X 看有哪些函数引用了这条字符串，有两个，先看靠前的那个。函数里有很多 `ollydbg.exe`、`ida.exe` 这样的字符串，还有 `CreateToolhelp32Snapshot` 之类的 API 调用，很明显是遍历系统进程，检测有没有调试工具在运行。再看靠后的那个，这个函数很有意思，学到了点东西，我把反汇编结果贴出来：
 
@@ -175,7 +175,7 @@ void __stdcall StartAddress_0(int a1)
 
 点 Options 菜单里第一项 General，在打开的对话框里勾选 Stack pointer，这样会在每一行汇编指令左边显示出该句执行前的 SP。拉到 `sub_411940` 的汇编底部，点击 SP 值异常的前面那一句，如下图，按 Alt+K：
 
-![修复 SP 指针](http://wx2.sinaimg.cn/large/6b1e58d5gy1ftk7t1dam5j20ay07vq2v.jpg)
+![修复 SP 指针](//wx2.sinaimg.cn/large/6b1e58d5gy1ftk7t1dam5j20ay07vq2v.jpg)
 
 在弹出的对话框里输入 `0x0`，确定，然后再点击下一句，同样按 Alt+K，输 `0x0`，确定。这样最后两句的 SP 都变成了 0，此时可以按 F5 看伪代码了：
 
@@ -264,7 +264,7 @@ int main(void) {
 $$
 flag\{ThisisthreadofwindowshahaIsESZ\}
 $$
-![flag](http://wx1.sinaimg.cn/large/6b1e58d5gy1ftk7rr9c3wj20qh0htdg5.jpg)
+![flag](//wx1.sinaimg.cn/large/6b1e58d5gy1ftk7rr9c3wj20qh0htdg5.jpg)
 
 ### 0x3. 参考资料
 
