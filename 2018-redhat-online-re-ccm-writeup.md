@@ -17,7 +17,7 @@ tags:
 
 拿到 exe，扔进 PEiD 看看。
 
-![](//wx2.sinaimg.cn/large/6b1e58d5gy1fr1rnm3p3bj20ei089gmh.jpg)
+![](https://wx2.sinaimg.cn/large/6b1e58d5gy1fr1rnm3p3bj20ei089gmh.jpg)
 
 加了 nSPack 壳，先找个工具脱壳。脱壳后的文件拖进 IDA，按 F5 看伪代码。
 
@@ -55,7 +55,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 进入 `sub_401380` 分析。
 
-![](//wx3.sinaimg.cn/large/6b1e58d5gy1fr1uhawb0nj20n614wt9j.jpg)
+![](https://wx3.sinaimg.cn/large/6b1e58d5gy1fr1uhawb0nj20n614wt9j.jpg)
 
 看不全的两行后面再说。
 
@@ -216,7 +216,7 @@ LABEL_22:
 
 这个函数的作用是生成两张维吉尼亚密码表，一张小写，一张大写，长这样（要用到的是小写的）：
 
-![](//wx4.sinaimg.cn/mw690/6b1e58d5gy1fr1w8qokr2j20p00p0grz.jpg)
+![](https://wx4.sinaimg.cn/mw690/6b1e58d5gy1fr1w8qokr2j20p00p0grz.jpg)
 
 小写密码表会存到传入的局部数组 `subst_table_low`，以备后面加密替换。
 
@@ -305,7 +305,7 @@ LABEL_15:
 $$
 flag\{54f946f5-f95a-4a0a-ba31-7b171a7eca82\}
 $$
-![](//wx3.sinaimg.cn/large/6b1e58d5gy1fr1yn8s2qtj20d306l74g.jpg)
+![](https://wx3.sinaimg.cn/large/6b1e58d5gy1fr1yn8s2qtj20d306l74g.jpg)
 
 ### 0x2. Pwn - game server
 
@@ -413,5 +413,5 @@ flag\{f3b92d795c9ee0725c160680acd084d9\}
 $$
 
 
-![](//wx3.sinaimg.cn/mw690/6b1e58d5gy1fs3393pkfbj20u012345g.jpg)
+![](https://wx3.sinaimg.cn/mw690/6b1e58d5gy1fs3393pkfbj20u012345g.jpg)
 
